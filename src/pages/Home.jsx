@@ -1,7 +1,9 @@
-import LightRays from '@/blocks/Backgrounds/LightRays/LightRays';
+import FadeContent from '@/blocks/Animations/FadeContent/FadeContent';
+import Beams from '@/blocks/Backgrounds/Beams/Beams';
+import { Navbar } from '@/components/Navbar';
 import { Box, Container, Flex, IconButton, Text } from '@chakra-ui/react';
-import React from 'react';
 import { FaFacebook, FaGithub } from 'react-icons/fa';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -19,21 +21,19 @@ const Home = () => {
     >
       {/* Light Ray Background */}
       <Box position='absolute' top={0} left={0} right={0} bottom={0}>
-        <LightRays
-          raysOrigin='top-center'
-          raysColor='#00ffff'
-          raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={1.2}
-          followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0.1}
-          distortion={0.05}
-          className='custom-rays'
+        <Beams
+          beamWidth={2}
+          beamHeight={15}
+          beamNumber={12}
+          lightColor='#ffffff'
+          speed={2}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={0}
         />
       </Box>
 
-      {/* Navbar */}
+      {/* Header */}
       <Flex
         justifyContent='space-between'
         alignItems='center'
@@ -45,67 +45,95 @@ const Home = () => {
         right={0}
         zIndex={2}
       >
-        {/* Logo and Copyright //TODO: Add logo here */}
-        <Box
-          fontSize={{ base: 'xs', md: 'sm' }}
-          color='white'
-          textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-          fontWeight='bold'
+        {/* Logo and Copyright */}
+        <FadeContent
+          blur={true}
+          duration={1500}
+          easing='ease-out'
+          initialOpacity={0}
         >
-          &copy; 2025 Stellar Luna Co.
-        </Box>
+          <Box
+            fontSize={{ base: 'xs', md: 'sm' }}
+            color='white'
+            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+            fontWeight='bold'
+          >
+            &copy; 2025 Orbyte Studio.
+          </Box>
+        </FadeContent>
 
         {/* Social Icons */}
-        <Box display='flex' gap={2}>
-          <IconButton
-            variant='ghost'
-            aria-label='GitHub'
-            color='white'
-            borderRadius='full'
-            _hover={{ bg: 'white', color: 'black' }}
-          >
-            <FaGithub />
-          </IconButton>
-          <IconButton
-            variant='ghost'
-            aria-label='Facebook'
-            color='white'
-            borderRadius='full'
-            _hover={{ bg: 'white', color: 'black' }}
-          >
-            <FaFacebook />
-          </IconButton>
-        </Box>
+        <FadeContent
+          blur={true}
+          duration={1500}
+          easing='ease-out'
+          initialOpacity={0}
+        >
+          <Box display='flex' gap={2}>
+            <IconButton
+              variant='ghost'
+              aria-label='GitHub'
+              color='white'
+              borderRadius='full'
+              _hover={{ bg: 'white', color: 'black' }}
+              as={RouterLink}
+              to='https://github.com/Orbyte-Studio'
+            >
+              <FaGithub />
+            </IconButton>
+            <IconButton
+              variant='ghost'
+              aria-label='Facebook'
+              color='white'
+              borderRadius='full'
+              _hover={{ bg: 'white', color: 'black' }}
+              as={RouterLink}
+              to='https://www.facebook.com/profile.php?id=61580015592005'
+            >
+              <FaFacebook />
+            </IconButton>
+          </Box>
+        </FadeContent>
       </Flex>
 
       {/* Content */}
-      <Box
-        position='relative'
-        zIndex={1}
-        textAlign='center'
-        px={{ base: 4, md: 0 }}
+      <FadeContent
+        blur={true}
+        duration={1000}
+        easing='ease-out'
+        initialOpacity={0}
       >
         <Box
-          as='h1'
-          fontSize={{ base: '4xl', md: '6xl' }}
-          fontWeight='bold'
-          mb={4}
-          color='white'
-          textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-          className='michroma-regular'
+          position='relative'
+          zIndex={1}
+          textAlign='center'
+          px={{ base: 4, md: 0 }}
         >
-          Stellar Luna Multimedia
+          <Box
+            as='h1'
+            fontSize={{ base: '4xl', md: '6xl' }}
+            fontWeight='bold'
+            mb={4}
+            color='white'
+            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+            className='michroma-regular'
+          >
+            Orbyte Studio
+          </Box>
+          <Text
+            fontSize={{ base: 'md', md: 'lg' }}
+            mb={8}
+            color='white'
+            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+            fontStyle='italic'
+          >
+            Creativity in Motion: Where Imagination Orbits Reality
+          </Text>
         </Box>
-        <Text
-          fontSize={{ base: 'md', md: 'lg' }}
-          mb={8}
-          color='white'
-          textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-          fontStyle='italic'
-        >
-          Creativity in Motion | Where Imagination Orbits Reality
-        </Text>
-      </Box>
+      </FadeContent>
+
+      {/* Bottom Navbar */}
+      <Navbar />
     </Container>
   );
 };
