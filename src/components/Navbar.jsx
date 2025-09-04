@@ -19,10 +19,10 @@ export const Navbar = () => {
 
   return (
     <Box
-      position='absolute'
       bottom={{ base: 4, md: 8 }}
       zIndex={2}
       display='flex'
+      position='fixed'
       gap={{ base: 0.5, md: 1 }}
       p={{ base: 0.5, md: 1 }}
       borderRadius='lg'

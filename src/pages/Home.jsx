@@ -1,5 +1,6 @@
 import FadeContent from '@/blocks/Animations/FadeContent/FadeContent';
 import Beams from '@/blocks/Backgrounds/Beams/Beams';
+import ShinyText from '@/blocks/TextAnimations/ShinyText/ShinyText';
 import { Navbar } from '@/components/Navbar';
 import { Box, Container, Flex, IconButton, Text } from '@chakra-ui/react';
 import { FaFacebook, FaGithub } from 'react-icons/fa';
@@ -53,12 +54,13 @@ const Home = () => {
           initialOpacity={0}
         >
           <Box
-            fontSize={{ base: 'xs', md: 'sm' }}
+            fontSize={{ base: '2xs', md: 'xs' }}
             color='white'
             textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
             fontWeight='bold'
+            className='major-mono-display-regular'
           >
-            &copy; 2025 Orbyte Studio.
+            &copy; 2025 ORbyte StVdio.
           </Box>
         </FadeContent>
 
@@ -111,29 +113,32 @@ const Home = () => {
         >
           <Box
             as='h1'
-            fontSize={{ base: '4xl', md: '6xl' }}
-            fontWeight='bold'
+            fontSize={{ base: '5xl', md: '7xl' }}
             mb={4}
             color='white'
             textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-            className='michroma-regular'
+            className='major-mono-display-regular'
           >
-            Orbyte Studio
+            ORbyte StVdio
           </Box>
-          <Text
+          <Box
+            as='h1'
             fontSize={{ base: 'md', md: 'lg' }}
             mb={8}
             color='white'
             textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
             fontStyle='italic'
+            className='work-sans-regular'
           >
-            Creativity in Motion: Where Imagination Orbits Reality
-          </Text>
+            <ShinyText
+              text='We Are Orbyte Studio, Where Your Dreams Are Byte Away From The Future'
+              disabled={false}
+              speed={3}
+              className='custom-class'
+            />
+          </Box>
         </Box>
       </FadeContent>
-
-      {/* Bottom Navbar */}
-      <Navbar />
     </Container>
   );
 };
