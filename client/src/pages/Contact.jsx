@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { toaster } from '@/components/ui/toaster';
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '@/api/api';
 
 const rolesAvailable = [
   'Production Coordinator',
@@ -84,7 +84,7 @@ const Contact = () => {
       };
 
       try {
-        await axios.post('/api/contact/submit-application', payload);
+        await api.post('/contact/submit-application', payload);
 
         toaster.create({
           title: 'Form Submitted',
