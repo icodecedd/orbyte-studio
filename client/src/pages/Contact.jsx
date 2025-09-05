@@ -194,11 +194,7 @@ const Contact = () => {
           scale={1}
           threshold={0.1}
         >
-          <form
-            action='https://formspree.io/f/your-form-id'
-            method='POST'
-            onSubmit={handleSubmit}
-          >
+          <form onSubmit={handleSubmit}>
             <Flex
               direction={{ base: 'column', md: 'row' }}
               gap={{ base: 4, md: 6 }}
