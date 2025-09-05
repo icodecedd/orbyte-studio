@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 const CLIENT_URL =
   process.env.CLIENT_URL ||
   (process.env.NODE_ENV === "production"
-    ? "https://your-frontend-app.vercel.app"
+    ? "https://orbyte-studio.vercel.app"
     : "http://localhost:5173");
 
 app.use(express.json());
