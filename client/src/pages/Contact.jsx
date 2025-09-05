@@ -84,7 +84,7 @@ const Contact = () => {
       };
 
       try {
-        await api.post('/api/contact/submit-application', payload);
+        await api.post('/contact/submit-application', payload);
 
         toaster.create({
           title: 'Form Submitted',
