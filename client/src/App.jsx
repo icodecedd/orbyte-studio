@@ -6,7 +6,6 @@ import Team from './pages/Team';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Feedback from './pages/Feedback';
-import Login from './pages/Login';
 import './assets/global.css';
 import { Toaster } from './components/ui/toaster';
 
@@ -23,7 +22,6 @@ function App() {
           <Route path='projects' element={<Projects />} />
           <Route path='contact' element={<Contact />} />
           <Route path='feedback' element={<Feedback />} />
-          <Route path='login' element={<Login />} />
           <Route path='*' element={<Navigate to='home' replace />} />
         </Route>
       </Routes>

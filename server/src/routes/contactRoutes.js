@@ -1,8 +1,8 @@
 import express from "express";
-import { contactUs } from "../controllers/contactController.js";
+import { sendApplicationEmail } from "../controllers/gmailController.js";
 
 const router = express.Router();
 
-router.post("/submit-application", contactUs);
+router.post("/submit-application", sendApplicationEmail);
 
 export default router;

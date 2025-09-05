@@ -4,6 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import {
   FiHome,
   FiInfo,
+  FiLock,
   FiLogIn,
   FiMail,
   FiMenu,
@@ -174,7 +175,7 @@ export const Navbar = () => {
                 </Menu.Item>
                 <Menu.Item
                   as={RouterLink}
-                  to='/login'
+                  disabled
                   value='login'
                   color='black'
                   borderRadius='lg'
@@ -184,8 +185,8 @@ export const Navbar = () => {
                   py={2}
                   px={3}
                 >
-                  <FiLogIn size={16} style={{ marginRight: '8px' }} />
-                  Login
+                  <FiLock size={16} style={{ marginRight: '8px' }} />
+                  Coming Soon
                 </Menu.Item>
               </Menu.Content>
             </Menu.Positioner>

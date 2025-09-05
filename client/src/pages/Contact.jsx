@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { toaster } from '@/components/ui/toaster';
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const rolesAvailable = [
   'Production Coordinator',
@@ -54,8 +55,10 @@ const Contact = () => {
     setErrors((prev) => ({ ...prev, [name]: false }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log('Form submitted:', form);
 
     const newErrors = {
       firstName: !form.firstName,
@@ -71,23 +74,45 @@ const Contact = () => {
     const hasErrors = Object.values(newErrors).some((error) => error);
 
     if (!hasErrors) {
-      toaster.create({
-        title: 'Form Submitted',
-        description: 'Your submission has been sent successfully!',
-        type: 'success',
-        duration: 5000,
-        isClosable: true,
-      });
+      const payload = {
+        firstName: form?.firstName?.trim() || '',
+        lastName: form?.lastName?.trim() || '',
+        email: form?.email?.trim() || '',
+        message: form?.message?.trim() || '',
+        link: form?.link || '',
+        role: form?.role || '',
+      };
 
-      console.log('Form submitted:', form);
-      setForm({
-        firstName: '',
-        lastName: '',
-        email: '',
-        message: '',
-        link: '',
-        role: '',
-      });
+      try {
+        await axios.post('/api/contact/submit-application', payload);
+
+        toaster.create({
+          title: 'Form Submitted',
+          description: 'Your submission has been sent successfully!',
+          type: 'success',
+          duration: 5000,
+          isClosable: true,
+        });
+
+        setForm({
+          firstName: '',
+          lastName: '',
+          email: '',
+          message: '',
+          link: '',
+          role: '',
+        });
+      } catch (error) {
+        toaster.create({
+          title: 'Submission Failed',
+          description:
+            'An error occurred while submitting the form. Please try again.',
+          type: 'error',
+          duration: 5000,
+          isClosable: true,
+        });
+        console.error('Error submitting form:', error);
+      }
     } else {
       toaster.create({
         title: 'Form Error',
@@ -314,7 +339,22 @@ const Contact = () => {
               </Fieldset.ErrorText>
             </Fieldset.Root>
 
-            <Button variant='solid' size='md' mt={6} width='100%' type='submit'>
+            <Button
+              variant='solid'
+              size='md'
+              mt={6}
+              width='100%'
+              type='submit'
+              bg='white'
+              color='black'
+              border='1px solid'
+              borderColor='gray.300'
+              _hover={{
+                bg: 'gray.100',
+                transform: 'translateY(-3px)',
+                boxShadow: 'lg',
+              }}
+            >
               Submit
             </Button>
           </form>
