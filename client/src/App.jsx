@@ -8,10 +8,12 @@ import Contact from './pages/Contact';
 import Feedback from './pages/Feedback';
 import Login from './pages/Login';
 import './assets/global.css';
+import { Toaster } from './components/ui/toaster';
 
 function App() {
   return (
     <>
+      <Toaster />
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Navigate to='home' replace />} />
