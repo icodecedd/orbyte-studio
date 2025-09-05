@@ -1,7 +1,6 @@
 import FadeContent from '@/blocks/Animations/FadeContent/FadeContent';
 import Beams from '@/blocks/Backgrounds/Beams/Beams';
 import ShinyText from '@/blocks/TextAnimations/ShinyText/ShinyText';
-import { Navbar } from '@/components/Navbar';
 import { Box, Container, Flex, IconButton, Text } from '@chakra-ui/react';
 import { FaFacebook, FaGithub } from 'react-icons/fa';
 import { Link as RouterLink } from 'react-router-dom';

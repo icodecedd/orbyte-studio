@@ -8,10 +8,10 @@ import {
   FiMail,
   FiMenu,
   FiMessageSquare,
-  FiUserPlus,
   FiUsers,
   FiX,
 } from 'react-icons/fi';
+import { IoBriefcaseOutline } from 'react-icons/io5';
 import { useState } from 'react';
 
 export const Navbar = () => {
@@ -94,7 +94,7 @@ export const Navbar = () => {
         </Button>
         <Button
           as={RouterLink}
-          to='/contact'
+          to='/projects'
           variant='ghost'
           color='black'
           size='sm'
@@ -105,11 +105,11 @@ export const Navbar = () => {
           _hover={{ bg: '#171717', color: 'white' }}
           px={{ base: 1, md: 2 }}
         >
-          <FiMail
+          <IoBriefcaseOutline
             size={16}
             style={{ marginRight: { base: '4px', md: '6px' } }}
           />
-          Contact
+          Projects
         </Button>
 
         <Menu.Root
@@ -144,9 +144,9 @@ export const Navbar = () => {
                 minW={{ base: '120px', md: '140px' }}
               >
                 <Menu.Item
-                  value='join'
+                  value='contact'
                   as={RouterLink}
-                  to='/join'
+                  to='/contact'
                   color='black'
                   borderRadius='lg'
                   fontWeight='medium'
@@ -155,8 +155,7 @@ export const Navbar = () => {
                   py={2}
                   px={3}
                 >
-                  <FiUserPlus size={16} style={{ marginRight: '8px' }} /> Join
-                  Us
+                  <FiMail size={16} style={{ marginRight: '8px' }} /> Contact
                 </Menu.Item>
                 <Menu.Item
                   as={RouterLink}

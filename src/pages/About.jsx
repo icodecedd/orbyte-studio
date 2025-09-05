@@ -1,18 +1,100 @@
-import { Navbar } from '@/components/Navbar';
-import { Container, Heading, Image, Text, Flex, Box } from '@chakra-ui/react';
+import {
+  Container,
+  Heading,
+  Image,
+  Text,
+  Flex,
+  Box,
+  Separator,
+} from '@chakra-ui/react';
 import orbit from '@/assets/orbit.webp';
 import star from '@/assets/star.webp';
 import whiteHole from '@/assets/white-hole.webp';
 import stellar from '@/assets/stellar.webp';
 import orbital from '@/assets/orbital.webp';
-import CircularText from '@/blocks/TextAnimations/CircularText/CircularText';
 import CurvedLoop from '@/blocks/TextAnimations/CurvedLoop/CurvedLoop';
+import AnimatedContent from '@/blocks/Animations/AnimatedContent/AnimatedContent';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  const whiteHoleRef = useRef(null);
+  const missionRef = useRef(null);
+  const visionRef = useRef(null);
+
+  useEffect(() => {
+    // WhiteHole image animation
+    const whiteHoleImage = whiteHoleRef.current;
+    gsap.fromTo(
+      whiteHoleImage,
+      { width: '50%' }, // Initial width
+      {
+        width: '100%', // Final width as it becomes visible
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: whiteHoleImage,
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: 0.8,
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+
+    // Mission section animation
+    const missionSection = missionRef.current;
+    gsap.fromTo(
+      missionSection,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: missionSection,
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: 0.8,
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+
+    // Vision section animation
+    const visionSection = visionRef.current;
+    gsap.fromTo(
+      visionSection,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: visionSection,
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: 0.8,
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+
+    // Cleanup ScrollTrigger on component unmount
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
     <Container
       as='section'
-      id='home'
+      id='about'
       minH='100vh'
       display='flex'
       flexDirection='column'
@@ -23,110 +105,134 @@ const About = () => {
       overflow='hidden'
       maxW='100%'
       mt={{ base: 0, md: 16 }}
+      mb={{ base: 0, md: 32 }}
     >
-      <Flex
-        direction={{ base: 'column', md: 'row' }}
-        alignItems='center'
-        justifyContent='space-between'
-        w='100%'
-        maxW='1200px'
-        mb={12}
-        px={{ base: 4, md: 0 }}
+      <AnimatedContent
+        distance={100}
+        direction='horizontal'
+        reverse={false}
+        duration={0.8}
+        ease='power3.out'
+        animateOpacity
+        scale={1}
+        threshold={0.1}
       >
-        <Box flex='1' order={{ base: 2, md: 1 }}>
-          <Image
-            src={orbit}
-            alt='Orbit'
-            w='100%'
-            h='300px'
-            objectFit='fill'
-            borderRadius='2xl'
-          />
-        </Box>
-        <Box
-          flex='1'
-          textAlign={{ base: 'center', md: 'right' }}
-          pl={{ base: 0, md: 8 }}
-          mb={{ base: 4, md: 0 }}
-          order={{ base: 1, md: 2 }}
+        <Flex
+          direction={{ base: 'column', md: 'row' }}
+          alignItems='center'
+          justifyContent='space-between'
+          w='100%'
+          maxW='1200px'
+          mb={12}
+          px={{ base: 4, md: 0 }}
         >
-          <Heading
-            fontSize={{ base: '2xl', md: '4xl' }}
-            mb={4}
-            color='white'
-            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-            className='major-mono-display-regular'
+          <Box flex='1' order={{ base: 2, md: 1 }}>
+            <Image
+              src={orbit}
+              alt='Orbit'
+              w='100%'
+              h='300px'
+              objectFit='fill'
+              borderRadius='2xl'
+            />
+          </Box>
+          <Box
+            flex='1'
+            textAlign={{ base: 'center', md: 'right' }}
+            pl={{ base: 0, md: 8 }}
+            mb={{ base: 4, md: 0 }}
+            order={{ base: 1, md: 2 }}
           >
-            WHAT WE ARE BUILDING
-          </Heading>
-          <Text
-            fontSize={{ base: 'md', md: 'lg' }}
-            color='white'
-            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-            className='work-sans-regular'
-          >
-            At Orbyte Studio, we're crafting the future of multimedia
-            storytelling. Like celestial bodies that illuminate the cosmos, we
-            create content that captures imagination and transforms ideas into
-            stellar experiences. Our multimedia company specializes in film
-            production, digital design, strategic campaigns, and immersive brand
-            narratives that resonate across galaxies of audiences. We don't just
-            produce content—we architect dreams and engineer inspiration.
-          </Text>
-        </Box>
-      </Flex>
+            <Heading
+              fontSize={{ base: '2xl', md: '4xl' }}
+              mb={4}
+              color='white'
+              textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+              className='major-mono-display-regular'
+            >
+              WHAt We ARe buildinG
+            </Heading>
+            <Text
+              fontSize={{ base: 'md', md: 'lg' }}
+              color='white'
+              textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+              className='work-sans-regular'
+            >
+              At Orbyte Studio, we're crafting the future of multimedia
+              storytelling. Like celestial bodies that illuminate the cosmos, we
+              create content that captures imagination and transforms ideas into
+              stellar experiences. Our multimedia company specializes in film
+              production, digital design, strategic campaigns, and immersive
+              brand narratives that resonate across galaxies of audiences. We
+              don't just produce content—we architect dreams and engineer
+              inspiration.
+            </Text>
+          </Box>
+        </Flex>
+      </AnimatedContent>
 
-      <Flex
-        direction={{ base: 'column', md: 'row' }}
-        alignItems='center'
-        justifyContent='space-between'
-        w='100%'
-        maxW='1200px'
-        mb={12}
-        px={{ base: 4, md: 0 }}
+      <AnimatedContent
+        distance={100}
+        direction='horizontal'
+        reverse={true}
+        duration={0.8}
+        ease='power3.out'
+        animateOpacity
+        scale={1}
+        threshold={0.1}
       >
-        <Box
-          flex='1'
-          textAlign={{ base: 'center', md: 'left' }}
-          pr={{ base: 0, md: 8 }}
-          mb={{ base: 4, md: 0 }}
+        <Flex
+          direction={{ base: 'column', md: 'row' }}
+          alignItems='center'
+          justifyContent='space-between'
+          w='100%'
+          maxW='1200px'
+          mb={12}
+          px={{ base: 4, md: 0 }}
         >
-          <Heading
-            fontSize={{ base: '2xl', md: '4xl' }}
-            mb={4}
-            color='white'
-            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-            className='major-mono-display-regular'
+          <Box
+            flex='1'
+            textAlign={{ base: 'center', md: 'left' }}
+            pr={{ base: 0, md: 8 }}
+            mb={{ base: 4, md: 0 }}
           >
-            WHO WE ARE
-          </Heading>
-          <Text
-            fontSize={{ base: 'md', md: 'lg' }}
-            color='white'
-            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-            className='work-sans-regular'
-          >
-            We are dreamers, creators, and cosmic architects united by a shared
-            passion for multimedia excellence. Our constellation includes
-            visionaries from diverse backgrounds—filmmakers, designers,
-            strategists, and storytellers—all orbiting around the common goal of
-            creating content that moves, inspires, and endures. Like the phases
-            of the moon, we embrace constant evolution, always seeking new ways
-            to illuminate the path forward for our team, clients, and the
-            industry we serve.
-          </Text>
-        </Box>
-        <Box flex='1'>
-          <Image
-            src={star}
-            alt='Star'
-            w='100%'
-            h='300px'
-            objectFit='fill'
-            borderRadius='2xl'
-          />
-        </Box>
-      </Flex>
+            <Heading
+              fontSize={{ base: '2xl', md: '4xl' }}
+              mb={4}
+              color='white'
+              textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+              className='major-mono-display-regular'
+            >
+              WHo We ARe
+            </Heading>
+            <Text
+              fontSize={{ base: 'md', md: 'lg' }}
+              color='white'
+              textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+              className='work-sans-regular'
+            >
+              We are dreamers, creators, and cosmic architects united by a
+              shared passion for multimedia excellence. Our constellation
+              includes visionaries from diverse backgrounds—filmmakers,
+              designers, strategists, and storytellers—all orbiting around the
+              common goal of creating content that moves, inspires, and endures.
+              Like the phases of the moon, we embrace constant evolution, always
+              seeking new ways to illuminate the path forward for our team,
+              clients, and the industry we serve.
+            </Text>
+          </Box>
+          <Box flex='1'>
+            <Image
+              src={star}
+              alt='Star'
+              w='100%'
+              h='300px'
+              objectFit='fill'
+              borderRadius='2xl'
+            />
+          </Box>
+        </Flex>
+      </AnimatedContent>
 
       <CurvedLoop
         marqueeText='ORBYTE*MAKE*INNOVATIONS*'
@@ -134,23 +240,24 @@ const About = () => {
         curveAmount={0}
         direction='right'
         interactive={true}
-        className='orbitron'
+        className='orbitron curved-loop'
       />
 
       <Flex
         direction={{ base: 'column', md: 'row' }}
         alignItems='center'
-        justifyContent='space-between'
+        justifyContent='center'
         w='100%'
         maxW='1200px'
-        px={{ base: 4, md: 0 }}
         mt={{ base: 4, md: 0 }}
+        mb={{ base: 12, md: 24 }}
       >
-        <Box flex='1'>
+        <Box flex='1' display='flex' justifyContent='center'>
           <Image
+            id='whiteHole'
+            ref={whiteHoleRef}
             src={whiteHole}
             alt='Orbit'
-            w='100%'
             h='300px'
             objectFit='fill'
             borderRadius='2xl'
@@ -158,7 +265,141 @@ const About = () => {
         </Box>
       </Flex>
 
-      <Box></Box>
+      <Box ref={missionRef} w='100%' maxW='1200px' mb={12}>
+        <Flex
+          direction={{ base: 'column', md: 'row' }}
+          alignItems='center'
+          justifyContent='space-between'
+          px={{ base: 4, md: 0 }}
+        >
+          <Box
+            flex='1'
+            display='flex'
+            justifyContent='center'
+            mt={{ base: 4, md: 0 }}
+            order={{ base: 2, md: 1 }}
+          >
+            <Image
+              src={stellar}
+              alt='Stellar'
+              w={{ base: '100%', md: '80%' }}
+              h='300px'
+              objectFit='fill'
+              borderRadius='2xl'
+            />
+          </Box>
+          <Box
+            flex='1'
+            textAlign='center'
+            pl={{ base: 0, md: 8 }}
+            order={{ base: 1, md: 2 }}
+          >
+            <Heading
+              fontSize={{ base: '3xl', md: '6xl' }}
+              mb={{ base: 8, md: 12 }}
+              className='bebas-neue-regular'
+              color='white'
+              textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+            >
+              Our{' '}
+              <Text
+                as='span'
+                color='gray.700'
+                textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+                bg='white'
+                px={2}
+                borderRadius='xl'
+              >
+                Mission
+              </Text>
+            </Heading>
+            <Separator borderWidth='2px' w='100%' mb={4} />
+            <Text
+              fontSize={{ base: 'md', md: 'lg' }}
+              color='white'
+              textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+              className='work-sans-regular'
+              textAlign={{ base: 'center', md: 'right' }}
+            >
+              We exist to push the boundaries of creative expression,
+              transforming ordinary concepts into extraordinary multimedia
+              experiences. Our mission is to be the gravitational force that
+              pulls together visionary storytelling, cutting-edge technology,
+              and authentic human connection. Every project we undertake is
+              guided by our commitment to excellence, innovation, and the belief
+              that great stories have the power to shift perspectives and
+              illuminate new possibilities.
+            </Text>
+          </Box>
+        </Flex>
+      </Box>
+
+      <Box ref={visionRef} w='100%' maxW='1200px' mt={4}>
+        <Flex
+          direction={{ base: 'column', md: 'row' }}
+          alignItems='center'
+          justifyContent='space-between'
+          px={{ base: 4, md: 0 }}
+        >
+          <Box
+            flex='1'
+            textAlign='center'
+            pr={{ base: 0, md: 8 }}
+            order={{ base: 1, md: 2 }}
+            mb={{ base: 4, md: 0 }}
+          >
+            <Heading
+              fontSize={{ base: '3xl', md: '6xl' }}
+              mb={{ base: 8, md: 12 }}
+              className='bebas-neue-regular'
+              color='white'
+              textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+            >
+              Our{' '}
+              <Text
+                as='span'
+                color='gray.700'
+                bg='white'
+                px={2}
+                borderRadius='xl'
+              >
+                Vision
+              </Text>
+            </Heading>
+            <Separator borderWidth='2px' w='100%' mb={4} />
+            <Text
+              fontSize={{ base: 'md', md: 'lg' }}
+              color='white'
+              textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+              className='work-sans-regular'
+              textAlign={{ base: 'center', md: 'left' }}
+            >
+              Become the brightest star in the multimedia constellation.
+              recognized globally for our ability to transform creative visions
+              reality. We see a future in which Orbyte Studio serves as
+              Launchpad for developing talent, reliable partner for
+              forward-thinking brands are a beacon of innovation in the ever-
+              The world of digital content development is becoming increasingly
+              diverse.
+            </Text>
+          </Box>
+          <Box
+            flex='1'
+            display='flex'
+            justifyContent='center'
+            order={{ base: 1, md: 2 }}
+          >
+            <Image
+              src={orbital}
+              alt='Orbital'
+              w={{ base: '100%', md: '80%' }}
+              h='300px'
+              objectFit='fill'
+              borderRadius='2xl'
+            />
+          </Box>
+        </Flex>
+      </Box>
     </Container>
   );
 };
