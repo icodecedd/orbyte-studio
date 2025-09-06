@@ -132,7 +132,7 @@ const About = () => {
               alt='Orbit'
               w='100%'
               h='300px'
-              objectFit='fill'
+              objectFit='fill'r
               borderRadius='2xl'
             />
           </Box>

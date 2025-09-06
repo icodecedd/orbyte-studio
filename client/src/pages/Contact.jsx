@@ -180,6 +180,8 @@ const Contact = () => {
             team?
           </Heading>
         </Flex>
+
+        
       </AnimatedContent>
 
       {/* Form */}
@@ -204,7 +206,7 @@ const Contact = () => {
                 w={{ base: '100%', md: '50%' }}
                 invalid={errors.firstName}
               >
-                <Field.Label>First name</Field.Label>
+                <Field.Label color='white'>First name</Field.Label>
                 <Input
                   placeholder='First name'
                   size='lg'
@@ -223,7 +225,7 @@ const Contact = () => {
                 w={{ base: '100%', md: '50%' }}
                 invalid={errors.lastName}
               >
-                <Field.Label>Last name</Field.Label>
+                <Field.Label color='white'>Last name</Field.Label>
                 <Input
                   placeholder='Last name'
                   size='lg'
@@ -241,7 +243,7 @@ const Contact = () => {
 
             {/* Email */}
             <Field.Root mt={6} invalid={errors.email}>
-              <Field.Label>Email</Field.Label>
+              <Field.Label color='white'>Email</Field.Label>
               <Input
                 placeholder='me@example.com'
                 size='lg'
@@ -259,7 +261,7 @@ const Contact = () => {
 
             {/* Message */}
             <Field.Root mt={6} invalid={errors.message}>
-              <Field.Label>Message</Field.Label>
+              <Field.Label color='white'>Message</Field.Label>
               <Textarea
                 placeholder='Your message'
                 size='lg'
@@ -277,7 +279,7 @@ const Contact = () => {
 
             {/* Resume Link */}
             <Field.Root mt={6} invalid={errors.link}>
-              <Field.Label>
+              <Field.Label color='white'>
                 Link
                 <InfoTip content='Please include a public Google Drive or portfolio link to your CV/Resume' />
               </Field.Label>
@@ -297,7 +299,7 @@ const Contact = () => {
 
             {/* Role */}
             <Fieldset.Root mt={6} invalid={errors.role}>
-              <Fieldset.Legend>Select your role</Fieldset.Legend>
+              <Fieldset.Legend color='white'>Select your role</Fieldset.Legend>
               <RadioGroup.Root
                 value={form.role}
                 onValueChange={(e) =>
