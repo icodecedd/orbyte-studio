@@ -78,6 +78,8 @@ const Home = () => {
               borderRadius='full'
               _hover={{ bg: 'white', color: 'black' }}
               as={RouterLink}
+              target='_blank'
+              rel='noopener noreferrer'
               to='https://github.com/Orbyte-Studio'
             >
               <FaGithub />
@@ -89,6 +91,8 @@ const Home = () => {
               borderRadius='full'
               _hover={{ bg: 'white', color: 'black' }}
               as={RouterLink}
+              target='_blank'
+              rel='noopener noreferrer'
               to='https://www.facebook.com/profile.php?id=61580015592005'
             >
               <FaFacebook />

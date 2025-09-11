@@ -1,8 +1,7 @@
-import React from 'react';
 
 const Projects = () => {
   return (
-    <div className='bebas-neue-regular' style={{ fontSize: '3rem' }}>
+    <div className='bebas-neue-regular' style={{ fontSize: '3rem', color: 'white' }}>
       Coming Soon...
     </div>
   );

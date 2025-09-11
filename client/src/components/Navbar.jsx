@@ -1,5 +1,5 @@
 import FadeContent from '@/blocks/Animations/FadeContent/FadeContent';
-import { Box, Button, Menu, Portal, IconButton } from '@chakra-ui/react';
+import { Box, Button, Menu, Portal, IconButton, Text } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   FiHome,
@@ -53,7 +53,7 @@ export const Navbar = () => {
             size={16}
             style={{ marginRight: { base: '4px', md: '6px' } }}
           />
-          Home
+          <Text mt={1}>Home</Text>
         </Button>
         <Button
           as={RouterLink}
@@ -72,7 +72,7 @@ export const Navbar = () => {
             size={16}
             style={{ marginRight: { base: '4px', md: '6px' } }}
           />
-          About
+          <Text mt={1}>About</Text>
         </Button>
         <Button
           as={RouterLink}
@@ -91,7 +91,7 @@ export const Navbar = () => {
             size={16}
             style={{ marginRight: { base: '4px', md: '6px' } }}
           />
-          Team
+          <Text mt={1}>Team</Text>
         </Button>
         <Button
           as={RouterLink}
@@ -110,7 +110,7 @@ export const Navbar = () => {
             size={16}
             style={{ marginRight: { base: '4px', md: '6px' } }}
           />
-          Projects
+          <Text mt={1}>Projects</Text>
         </Button>
 
         <Menu.Root
@@ -156,7 +156,8 @@ export const Navbar = () => {
                   py={2}
                   px={3}
                 >
-                  <FiMail size={16} style={{ marginRight: '8px' }} /> Contact
+                  <FiMail size={16} style={{ marginRight: '8px' }} /> 
+                  <Text mt={1}>Contact</Text>
                 </Menu.Item>
                 <Menu.Item
                   as={RouterLink}
@@ -171,7 +172,7 @@ export const Navbar = () => {
                   px={3}
                 >
                   <FiMessageSquare size={16} style={{ marginRight: '8px' }} />
-                  Feedback
+                  <Text mt={1}>Feedback</Text>
                 </Menu.Item>
                 <Menu.Item
                   as={RouterLink}

@@ -12,6 +12,7 @@ import {
   SimpleGrid,
   Textarea,
   RadioGroup,
+  Theme
 } from '@chakra-ui/react';
 import { toaster } from '@/components/ui/toaster';
 import React, { useState } from 'react';
@@ -141,6 +142,7 @@ const Contact = () => {
       mt={{ base: 0, md: 16 }}
       mb={{ base: 8, md: 32 }}
     >
+
       {/* Header */}
       <AnimatedContent
         distance={100}
@@ -152,6 +154,7 @@ const Contact = () => {
         scale={1}
         threshold={0.1}
       >
+
         <Flex
           flexDirection='column'
           alignItems='center'
@@ -180,12 +183,11 @@ const Contact = () => {
             team?
           </Heading>
         </Flex>
-
-        
       </AnimatedContent>
 
       {/* Form */}
       <Box w={{ base: '100%', md: '80%', lg: '70%' }} maxW='800px' mt={8}>
+        <Theme appearance='dark'>
         <AnimatedContent
           distance={100}
           direction='vertical'
@@ -281,7 +283,7 @@ const Contact = () => {
             <Field.Root mt={6} invalid={errors.link}>
               <Field.Label color='white'>
                 Link
-                <InfoTip content='Please include a public Google Drive or portfolio link to your CV/Resume' />
+                <InfoTip as='Button' color='white' content='Please include a public Google Drive or portfolio link to your CV/Resume' />
               </Field.Label>
               <Input
                 placeholder='Link'
@@ -327,7 +329,7 @@ const Contact = () => {
                     >
                       <RadioGroup.ItemHiddenInput />
                       <RadioGroup.ItemIndicator />
-                      <RadioGroup.ItemText>{role}</RadioGroup.ItemText>
+                      <RadioGroup.ItemText color='white'>{role}</RadioGroup.ItemText>
                     </RadioGroup.Item>
                   ))}
                 </SimpleGrid>
@@ -357,6 +359,7 @@ const Contact = () => {
             </Button>
           </form>
         </AnimatedContent>
+      </Theme>
       </Box>
     </Container>
   );

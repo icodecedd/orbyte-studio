@@ -11,6 +11,7 @@ import {
   RadioGroup,
   SimpleGrid,
   Textarea,
+  Theme,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 
@@ -101,6 +102,7 @@ const Feedback = () => {
 
       {/* Form */}
       <Box w={{ base: '100%', md: '80%', lg: '70%' }} maxW='800px' mt={8}>
+        <Theme appearance='dark'>
         <AnimatedContent
           distance={100}
           direction='vertical'
@@ -226,6 +228,7 @@ const Feedback = () => {
             </Button>
           </form>
         </AnimatedContent>
+        </Theme>
       </Box>
     </Container>
   );

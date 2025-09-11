@@ -138,7 +138,7 @@ const About = () => {
           </Box>
           <Box
             flex='1'
-            textAlign={{ base: 'center', md: 'right' }}
+            textAlign={{ base: 'center', md: 'justify' }}
             pl={{ base: 0, md: 8 }}
             mb={{ base: 4, md: 0 }}
             order={{ base: 1, md: 2 }}
@@ -192,7 +192,7 @@ const About = () => {
         >
           <Box
             flex='1'
-            textAlign={{ base: 'center', md: 'left' }}
+            textAlign={{ base: 'center', md: 'justify' }}
             pr={{ base: 0, md: 8 }}
             mb={{ base: 4, md: 0 }}
           >

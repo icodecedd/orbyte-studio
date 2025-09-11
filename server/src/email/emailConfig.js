@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 
 dotenv.config(); // Load environment variables
 
+console.log("Loaded env:", process.env.GMAIL_USER, process.env.GMAIL_APP_PASS);
+
 // Exported transporter
 export const mailTransporter = nodemailer.createTransport({
   service: "gmail",
