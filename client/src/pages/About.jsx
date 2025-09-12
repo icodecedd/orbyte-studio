@@ -132,13 +132,14 @@ const About = () => {
               alt='Orbit'
               w='100%'
               h='300px'
-              objectFit='fill'r
+              objectFit='fill'
+              r
               borderRadius='2xl'
             />
           </Box>
           <Box
             flex='1'
-            textAlign={{ base: 'center', md: 'justify' }}
+            textAlign='justify'
             pl={{ base: 0, md: 8 }}
             mb={{ base: 4, md: 0 }}
             order={{ base: 1, md: 2 }}
@@ -147,6 +148,7 @@ const About = () => {
               fontSize={{ base: '2xl', md: '4xl' }}
               mb={4}
               color='white'
+              textAlign={{ base: 'center', md: 'right' }}
               textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
               className='major-mono-display-regular'
             >
@@ -192,7 +194,7 @@ const About = () => {
         >
           <Box
             flex='1'
-            textAlign={{ base: 'center', md: 'justify' }}
+            textAlign='justify'
             pr={{ base: 0, md: 8 }}
             mb={{ base: 4, md: 0 }}
           >
@@ -200,6 +202,7 @@ const About = () => {
               fontSize={{ base: '2xl', md: '4xl' }}
               mb={4}
               color='white'
+              textAlign={{ base: 'center', md: 'left' }}
               textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
               className='major-mono-display-regular'
             >
@@ -299,6 +302,7 @@ const About = () => {
               mb={{ base: 8, md: 12 }}
               className='bebas-neue-regular'
               color='white'
+              textAlign='center'
               textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
             >
               Our{' '}
@@ -319,7 +323,7 @@ const About = () => {
               color='white'
               textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
               className='work-sans-regular'
-              textAlign={{ base: 'center', md: 'right' }}
+              textAlign='justify'
             >
               We exist to push the boundaries of creative expression,
               transforming ordinary concepts into extraordinary multimedia
@@ -340,6 +344,7 @@ const About = () => {
           alignItems='center'
           justifyContent='space-between'
           px={{ base: 4, md: 0 }}
+          mb={{ base: 0, md: 36 }}
         >
           <Box
             flex='1'
@@ -372,7 +377,7 @@ const About = () => {
               color='white'
               textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
               className='work-sans-regular'
-              textAlign={{ base: 'center', md: 'left' }}
+              textAlign='justify'
             >
               Become the brightest star in the multimedia constellation.
               recognized globally for our ability to transform creative visions

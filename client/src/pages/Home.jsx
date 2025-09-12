@@ -29,7 +29,7 @@ const Home = () => {
           speed={2}
           noiseIntensity={1.75}
           scale={0.2}
-          rotation={0}
+          rotation={30}
         />
       </Box>
 

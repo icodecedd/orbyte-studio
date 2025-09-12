@@ -97,7 +97,7 @@ const Team = () => {
     {
       image: mariano,
       title: 'Cedrick Joseph H. Mariano',
-      subtitle: 'Marketing Manager',
+      subtitle: 'Project Manager',
       social: [
         {
           icon: <FaGithub />,
@@ -145,7 +145,7 @@ const Team = () => {
     {
       image: delapeña,
       title: 'Harold Prince E. dela Peña',
-      subtitle: 'Film/Media Director',
+      subtitle: 'IT Specialist',
       social: [
         {
           icon: <FaGithub />,

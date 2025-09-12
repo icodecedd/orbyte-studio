@@ -25,10 +25,12 @@ export const Navbar = () => {
       display='flex'
       position='fixed'
       gap={{ base: 0.5, md: 1 }}
-      p={{ base: 0.5, md: 1 }}
-      borderRadius='lg'
-      bg='white'
-      boxShadow='sm'
+      p={{ base: 1, md: 1.5 }}
+      borderRadius='2xl'
+      bg='rgba(255, 255, 255, 0.1)'
+      backdropFilter='blur(12px)'
+      border='1px solid rgba(255, 255, 255, 0.2)'
+      boxShadow='0 8px 32px 0 rgba(31, 38, 135, 0.15)'
     >
       <FadeContent
         blur={true}
@@ -40,13 +42,14 @@ export const Navbar = () => {
           as={RouterLink}
           to='/'
           variant='ghost'
-          color='black'
+          color='white'
           size='sm'
           fontWeight='medium'
           fontSize={{ base: 'xs', md: 'sm' }}
           borderRadius='lg'
           transition='all 0.3s ease-in-out'
-          _hover={{ bg: '#171717', color: 'white' }}
+          bg='rgba(255, 255, 255, 0.05)'
+          _hover={{ bg: 'rgba(255, 255, 255, 0.2)', color: 'white' }}
           px={{ base: 1, md: 2 }}
         >
           <FiHome
@@ -59,13 +62,14 @@ export const Navbar = () => {
           as={RouterLink}
           to='/about'
           variant='ghost'
-          color='black'
+          color='white'
           size='sm'
           fontWeight='medium'
           fontSize={{ base: 'xs', md: 'sm' }}
           borderRadius='lg'
           transition='all 0.3s ease-in-out'
-          _hover={{ bg: '#171717', color: 'white' }}
+          bg='rgba(255, 255, 255, 0.05)'
+          _hover={{ bg: 'rgba(255, 255, 255, 0.2)', color: 'white' }}
           px={{ base: 1, md: 2 }}
         >
           <FiInfo
@@ -78,13 +82,14 @@ export const Navbar = () => {
           as={RouterLink}
           to='/team'
           variant='ghost'
-          color='black'
+          color='white'
           size='sm'
           fontWeight='medium'
           fontSize={{ base: 'xs', md: 'sm' }}
           borderRadius='lg'
           transition='all 0.3s ease-in-out'
-          _hover={{ bg: '#171717', color: 'white' }}
+          bg='rgba(255, 255, 255, 0.05)'
+          _hover={{ bg: 'rgba(255, 255, 255, 0.2)', color: 'white' }}
           px={{ base: 1, md: 2 }}
         >
           <FiUsers
@@ -97,13 +102,14 @@ export const Navbar = () => {
           as={RouterLink}
           to='/projects'
           variant='ghost'
-          color='black'
+          color='white'
           size='sm'
           fontWeight='medium'
           fontSize={{ base: 'xs', md: 'sm' }}
           borderRadius='lg'
           transition='all 0.3s ease-in-out'
-          _hover={{ bg: '#171717', color: 'white' }}
+          bg='rgba(255, 255, 255, 0.05)'
+          _hover={{ bg: 'rgba(255, 255, 255, 0.2)', color: 'white' }}
           px={{ base: 1, md: 2 }}
         >
           <IoBriefcaseOutline
@@ -123,12 +129,13 @@ export const Navbar = () => {
             <IconButton
               variant='ghost'
               aria-label='Menu'
-              color='black'
+              color='white'
               size='sm'
               borderRadius='lg'
               transition='all 0.3s ease-in-out'
-              _hover={{ bg: '#171717', color: 'white' }}
-              _expanded={{ bg: '#171717', color: 'white' }}
+              bg='rgba(255, 255, 255, 0.05)'
+              _hover={{ bg: 'rgba(255, 255, 255, 0.2)', color: 'white' }}
+              _expanded={{ bg: 'rgba(255, 255, 255, 0.2)', color: 'white' }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <FiX size={16} /> : <FiMenu size={16} />}
@@ -139,8 +146,10 @@ export const Navbar = () => {
             <Menu.Positioner>
               <Menu.Content
                 borderRadius='xl'
-                bg={{ base: 'white', md: '#d1d4d5' }}
-                boxShadow='lg'
+                bg='rgba(255, 255, 255, 0.1)'
+                backdropFilter='blur(12px)'
+                border='1px solid rgba(255, 255, 255, 0.2)'
+                boxShadow='0 8px 32px 0 rgba(31, 38, 135, 0.15)'
                 p={2}
                 minW={{ base: '120px', md: '140px' }}
               >
@@ -148,26 +157,28 @@ export const Navbar = () => {
                   value='contact'
                   as={RouterLink}
                   to='/contact'
-                  color='black'
+                  color='white'
                   borderRadius='lg'
                   fontWeight='medium'
                   fontSize={{ base: 'xs', md: 'sm' }}
-                  _hover={{ bg: '#171717', color: 'white' }}
+                  bg='rgba(255, 255, 255, 0.05)'
+                  _hover={{ bg: 'rgba(255, 255, 255, 0.2)', color: 'white' }}
                   py={2}
                   px={3}
                 >
-                  <FiMail size={16} style={{ marginRight: '8px' }} /> 
+                  <FiMail size={16} style={{ marginRight: '8px' }} />
                   <Text mt={1}>Contact</Text>
                 </Menu.Item>
                 <Menu.Item
                   as={RouterLink}
                   to='/feedback'
                   value='feedback'
-                  color='black'
+                  color='white'
                   borderRadius='lg'
                   fontWeight='medium'
                   fontSize={{ base: 'xs', md: 'sm' }}
-                  _hover={{ bg: '#171717', color: 'white' }}
+                  bg='rgba(255, 255, 255, 0.05)'
+                  _hover={{ bg: 'rgba(255, 255, 255, 0.2)', color: 'white' }}
                   py={2}
                   px={3}
                 >
@@ -178,11 +189,12 @@ export const Navbar = () => {
                   as={RouterLink}
                   disabled
                   value='login'
-                  color='black'
+                  color='white'
                   borderRadius='lg'
                   fontWeight='medium'
                   fontSize={{ base: 'xs', md: 'sm' }}
-                  _hover={{ bg: '#171717', color: 'white' }}
+                  bg='rgba(255, 255, 255, 0.05)'
+                  _hover={{ bg: 'rgba(255, 255, 255, 0.2)', color: 'white' }}
                   py={2}
                   px={3}
                 >
