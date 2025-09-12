@@ -1,16 +1,11 @@
 import ChromaGrid from '@/blocks/Components/ChromaGrid/ChromaGrid';
 import { Box, Button, Container, Flex, Heading, Text } from '@chakra-ui/react';
-import { FaFacebook, FaGithub } from 'react-icons/fa';
-import { IoMail } from 'react-icons/io5';
-import delapeña from '@/assets/dela-peña.webp';
-import florida from '@/assets/florida.webp';
-import mariano from '@/assets/mariano.webp';
-import masculino from '@/assets/masculino.webp';
 import AnimatedContent from '@/blocks/Animations/AnimatedContent/AnimatedContent';
 import { Link as RouterLink } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { CelestialTeam } from '@/data/CelestialTeam';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,105 +64,6 @@ const Team = () => {
     };
   }, []);
 
-  const orbyteTeam = [
-    {
-      image: florida,
-      title: 'Rj Jack A. Florida',
-      subtitle: 'Chief Executive Officer',
-      social: [
-        {
-          icon: <FaGithub />,
-          link: 'https://github.com/Rjjackflorida',
-          label: 'Github',
-        },
-        {
-          icon: <IoMail />,
-          link: 'mailto:rjjackflorida7@gmail.com',
-          label: 'Email',
-        },
-        {
-          icon: <FaFacebook />,
-          link: 'https://www.facebook.com/sh.izu.355138',
-          label: 'Facebook',
-        },
-      ],
-      borderColor: '#3B82F6',
-      gradient: 'linear-gradient(145deg, #3B82F6, #000)',
-    },
-    {
-      image: mariano,
-      title: 'Cedrick Joseph H. Mariano',
-      subtitle: 'Project Manager',
-      social: [
-        {
-          icon: <FaGithub />,
-          link: 'https://github.com/icodecedd',
-          label: 'Github',
-        },
-        {
-          icon: <IoMail />,
-          link: 'mailto:marianocedrick3@gmail.com',
-          label: 'Email',
-        },
-        {
-          icon: <FaFacebook />,
-          link: 'https://www.facebook.com/cedrickjosephmariano',
-          label: 'Facebook',
-        },
-      ],
-      borderColor: '#10B981',
-      gradient: 'linear-gradient(180deg, #10B981, #000)',
-    },
-    {
-      image: masculino,
-      title: 'Paulo D. Masculino',
-      subtitle: 'Creative Director',
-      social: [
-        {
-          icon: <FaGithub />,
-          link: 'https://github.com/paulomscln',
-          label: 'Github',
-        },
-        {
-          icon: <IoMail />,
-          link: 'mailto:paulomasculino1022@gmail.com',
-          label: 'Email',
-        },
-        {
-          icon: <FaFacebook />,
-          link: 'https://www.facebook.com/paulomscln',
-          label: 'Facebook',
-        },
-      ],
-      borderColor: '#F59E0B',
-      gradient: 'linear-gradient(165deg, #F59E0B, #000)',
-    },
-    {
-      image: delapeña,
-      title: 'Harold Prince E. dela Peña',
-      subtitle: 'IT Specialist',
-      social: [
-        {
-          icon: <FaGithub />,
-          link: 'https://github.com/Harowwld',
-          label: 'Github',
-        },
-        {
-          icon: <IoMail />,
-          link: 'mailto:harolddelapena.11@gmail.com',
-          label: 'Email',
-        },
-        {
-          icon: <FaFacebook />,
-          link: 'https://www.facebook.com/harold.delapena.927',
-          label: 'Facebook',
-        },
-      ],
-      borderColor: '#EF4444',
-      gradient: 'linear-gradient(195deg, #EF4444, #000)',
-    },
-  ];
-
   return (
     <Container
       as='section'
@@ -225,8 +121,8 @@ const Team = () => {
         </Flex>
       </AnimatedContent>
 
-      {/* Core Team */}
-      <Box mb={{ base: 8, md: 16 }}>
+      {/* BSIT Team */}
+      <Box mb={{ base: 8, md: 8 }} mt={{ base: 8, md: 8 }}>
         <AnimatedContent
           distance={100}
           direction='vertical'
@@ -237,8 +133,121 @@ const Team = () => {
           scale={1}
           threshold={0.1}
         >
+          <Heading
+            fontSize={{ base: '3xl', md: '6xl' }}
+            mb={{ base: 8, md: 12 }}
+            className='bebas-neue-regular'
+            color='white'
+            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+            textAlign='center'
+          >
+            Celestial{' '}
+            <Text
+              as='span'
+              color='white'
+              px={4}
+              py={1}
+              borderRadius='xl'
+              bg='rgba(255, 255, 255, 0.1)'
+              backdropFilter='blur(10px)'
+              border='1px solid rgba(255, 255, 255, 0.3)'
+            >
+              Innovators
+            </Text>
+          </Heading>
+
           <ChromaGrid
-            items={orbyteTeam}
+            items={CelestialTeam}
+            radius={300}
+            damping={0.45}
+            fadeOut={0.6}
+            ease='power3.out'
+          />
+        </AnimatedContent>
+      </Box>
+
+      {/* BSENTREP Team */}
+      <Box mb={{ base: 8, md: 8 }} mt={{ base: 0, md: 8 }}>
+        <AnimatedContent
+          distance={100}
+          direction='vertical'
+          reverse={true}
+          duration={0.8}
+          ease='power3.out'
+          animateOpacity
+          scale={1}
+          threshold={0.1}
+        >
+          <Heading
+            fontSize={{ base: '3xl', md: '6xl' }}
+            mb={{ base: 8, md: 12 }}
+            className='bebas-neue-regular'
+            color='white'
+            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+            textAlign='center'
+          >
+            Stellar{' '}
+            <Text
+              as='span'
+              color='white'
+              px={4}
+              py={1}
+              borderRadius='xl'
+              bg='rgba(255, 255, 255, 0.1)'
+              backdropFilter='blur(10px)'
+              border='1px solid rgba(255, 255, 255, 0.3)'
+            >
+              Navigators
+            </Text>
+          </Heading>
+
+          <ChromaGrid
+            items={CelestialTeam}
+            radius={300}
+            damping={0.45}
+            fadeOut={0.6}
+            ease='power3.out'
+          />
+        </AnimatedContent>
+      </Box>
+
+      {/* BSA Team */}
+      <Box mb={{ base: 8, md: 16 }} mt={{ base: 0, md: 8 }}>
+        <AnimatedContent
+          distance={100}
+          direction='vertical'
+          reverse={true}
+          duration={0.8}
+          ease='power3.out'
+          animateOpacity
+          scale={1}
+          threshold={0.1}
+        >
+          <Heading
+            fontSize={{ base: '3xl', md: '6xl' }}
+            mb={{ base: 8, md: 12 }}
+            className='bebas-neue-regular'
+            color='white'
+            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+            textAlign='center'
+          >
+            Lunar{' '}
+            <Text
+              as='span'
+              color='white'
+              px={4}
+              py={1}
+              borderRadius='xl'
+              bg='rgba(255, 255, 255, 0.1)'
+              backdropFilter='blur(10px)'
+              border='1px solid rgba(255, 255, 255, 0.3)'
+            >
+              Guardians
+            </Text>
+          </Heading>
+
+          <ChromaGrid
+            items={CelestialTeam}
             radius={300}
             damping={0.45}
             fadeOut={0.6}
@@ -269,6 +278,7 @@ const Team = () => {
           borderColor='gray.700'
           p={{ base: 4, md: 8 }}
           bgClip='padding-box'
+          mb={{ base: 0, md: 8 }}
         >
           <Text
             fontSize={{ base: 'xl', md: '2xl' }}
