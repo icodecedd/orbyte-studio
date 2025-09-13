@@ -15,7 +15,7 @@ import {
   Theme,
 } from '@chakra-ui/react';
 import { toaster } from '@/components/ui/toaster';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import api from '@/api/api';
 
 const rolesAvailable = [
@@ -45,6 +45,8 @@ const Contact = () => {
     role: false,
   });
 
+  const [isSubmitting, setSubmitting] = useState(false);
+
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
@@ -58,7 +60,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setSubmitting(true);
     console.log('Form submitted:', form);
 
     const newErrors = {
@@ -113,8 +115,11 @@ const Contact = () => {
           isClosable: true,
         });
         console.error('Error submitting form:', error);
+      } finally {
+        setSubmitting(false);
       }
     } else {
+      setSubmitting(false);
       toaster.create({
         title: 'Form Error',
         description: 'Please fill out all required fields correctly.',
@@ -360,6 +365,8 @@ const Contact = () => {
                   transform: 'translateY(-3px)',
                   boxShadow: 'lg',
                 }}
+                loading={isSubmitting}
+                loadingText='Submitting...'
               >
                 Submit
               </Button>

@@ -14,6 +14,8 @@ import {
   Theme,
 } from '@chakra-ui/react';
 import { useState } from 'react';
+import { toaster } from '@/components/ui/toaster';
+import api from '@/api/api';
 
 const ratings = ['Excellent', 'Good', 'Average', 'Bad', 'Terrible'];
 
@@ -32,6 +34,8 @@ const Feedback = () => {
     rating: false,
   });
 
+  const [isSubmitting, setSubmitting] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -40,7 +44,68 @@ const Feedback = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitting(true);
     console.log('Form submitted:', e.target.value);
+
+    const newErrors = {
+      name: !form.name,
+      email: !form.email,
+      message: !form.message,
+      rating: !form.rating,
+    };
+
+    setErrors(newErrors);
+
+    const hasErrors = Object.values(newErrors).some((error) => error);
+
+    if (!hasErrors) {
+      const payload = {
+        name: form?.name?.trim() || '',
+        email: form?.email?.trim() || '',
+        message: form?.message?.trim() || '',
+        rating: form?.rating || '',
+      };
+
+      try {
+        await api.post('/api/contact/submit-feedback', payload);
+
+        toaster.create({
+          title: 'Form Submitted',
+          description: 'Your submission has been sent successfully!',
+          type: 'success',
+          duration: 5000,
+          isClosable: true,
+        });
+
+        setForm({
+          name: '',
+          email: '',
+          message: '',
+          rating: '',
+        });
+      } catch (error) {
+        toaster.create({
+          title: 'Submission Failed',
+          description:
+            'An error occurred while submitting the form. Please try again.',
+          type: 'error',
+          duration: 5000,
+          isClosable: true,
+        });
+        console.error('Error submitting form:', error);
+      } finally {
+        setSubmitting(false);
+      }
+    } else {
+      setSubmitting(false);
+      toaster.create({
+        title: 'Form Error',
+        description: 'Please fill out all required fields correctly.',
+        type: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
+    }
   };
 
   return (
@@ -223,6 +288,8 @@ const Feedback = () => {
                   transform: 'translateY(-3px)',
                   boxShadow: 'lg',
                 }}
+                loading={isSubmitting}
+                loadingText='Submitting...'
               >
                 Submit
               </Button>

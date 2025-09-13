@@ -36,3 +36,47 @@ export const NEW_CONTACT_US = `
   </div>
 </body>
 </html>`;
+
+export const NEW_FEEDBACK = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>New Feedback Submission</title>
+</head>
+<body style="font-family: 'Inter', sans-serif; background-color: #1C2526; margin: 0; padding: 20px; color: #E8ECEF;">
+  <div style="max-width: 600px; margin: 30px auto; background: #2C3E50; border-radius: 12px; overflow: hidden; border: 1px solid #3A506B;">
+    <!-- Header -->
+    <div style="background: linear-gradient(90deg, #2C3E50, #1C2526); padding: 24px; text-align: center;">
+      <h1 style="color: #E8ECEF; margin: 0; font-size: 28px; font-weight: 600; letter-spacing: 0.5px;">New Feedback Received</h1>
+    </div>
+
+    <!-- Body -->
+    <div style="padding: 32px;">
+      <p style="font-size: 16px; line-height: 1.5; color: #E8ECEF;">Hello Admin,</p>
+      <p style="font-size: 16px; line-height: 1.5; color: #E8ECEF;">A new feedback submission has been received in the system.</p>
+
+      <!-- Feedback Details -->
+      <div style="background-color: #3A506B; padding: 20px; border-radius: 8px; border-left: 4px solid #5C9EAD; margin: 20px 0;">
+        <h3 style="margin-top: 0; color: #E8ECEF; font-size: 20px; font-weight: 500;">Feedback Details:</h3>
+        <p style="margin: 10px 0; color: #E8ECEF;"><strong>Name:</strong> {name}</p>
+        <p style="margin: 10px 0; color: #E8ECEF;"><strong>Email:</strong> {email}</p>
+        <p style="margin: 10px 0; color: #E8ECEF;"><strong>Message:</strong> {message}</p>
+        <p style="margin: 10px 0; color: #E8ECEF;"><strong>Rating:</strong> ⭐ {rating}/5</p>
+      </div>
+
+      <p style="font-size: 16px; line-height: 1.5; color: #E8ECEF;">
+        Please review the feedback provided. This will help us improve our services and user experience.
+      </p>
+
+      <p style="font-size: 14px; color: #B0C4DE; line-height: 1.5;">Best regards,<br/>The Orbyte Studio Team</p>
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: #1C2526; padding: 16px; text-align: center; color: #B0C4DE; font-size: 12px; border-top: 1px solid #3A506B;">
+      This is an automated message. Please do not reply.
+    </div>
+  </div>
+</body>
+</html>`;

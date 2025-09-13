@@ -6,6 +6,8 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CelestialTeam } from '@/data/CelestialTeam';
+import { StellarTeam } from '@/data/StellarTeam';
+import { LunarTeam } from '@/data/LunarTeam';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -202,7 +204,7 @@ const Team = () => {
           </Heading>
 
           <ChromaGrid
-            items={CelestialTeam}
+            items={StellarTeam}
             radius={300}
             damping={0.45}
             fadeOut={0.6}
@@ -247,7 +249,7 @@ const Team = () => {
           </Heading>
 
           <ChromaGrid
-            items={CelestialTeam}
+            items={LunarTeam}
             radius={300}
             damping={0.45}
             fadeOut={0.6}
