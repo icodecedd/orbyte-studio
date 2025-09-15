@@ -144,8 +144,7 @@ const Contact = () => {
       overflow='hidden'
       maxW={{ base: '100%', md: 'container.lg', lg: 'container.xl' }}
       px={{ base: 4, md: 8 }}
-      mt={{ base: 0, md: 16 }}
-      mb={{ base: 8, md: 32 }}
+      mb={{ base: 8, md: 16 }}
     >
       {/* Header */}
       <AnimatedContent

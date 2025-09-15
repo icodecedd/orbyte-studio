@@ -5,9 +5,9 @@ import { Link as RouterLink } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { CelestialTeam } from '@/data/CelestialTeam';
-import { StellarTeam } from '@/data/StellarTeam';
-import { LunarTeam } from '@/data/LunarTeam';
+import { CelestialTeam } from '@/constants/CelestialTeam';
+import { StellarTeam } from '@/constants/StellarTeam';
+import { LunarTeam } from '@/constants/LunarTeam';
 
 gsap.registerPlugin(ScrollTrigger);
 
