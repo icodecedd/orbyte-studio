@@ -1,16 +1,19 @@
-
 import { FaFacebook, FaGithub } from 'react-icons/fa';
 import { IoMail } from 'react-icons/io5';
 import delapeña from '@/assets/dela-peña.webp';
 import florida from '@/assets/florida.webp';
 import mariano from '@/assets/mariano.webp';
 import masculino from '@/assets/masculino.webp';
+import lumibao from '@/assets/lumibao.webp';
+import lina from '@/assets/lina.webp';
+import evangelista from '@/assets/evangelista.webp';
+import mendoza from '@/assets/mendoza.webp';
 
 export const LunarTeam = [
   {
-    image: florida,
-    title: 'Rj Jack A. Florida',
-    subtitle: 'Chief Executive Officer',
+    image: lumibao,
+    title: 'Monina Junielle S. Lumibao',
+    subtitle: 'Finance Manager',
     social: [
       {
         icon: <FaGithub />,
@@ -32,9 +35,9 @@ export const LunarTeam = [
     gradient: 'linear-gradient(145deg, #3B82F6, #000)',
   },
   {
-    image: mariano,
-    title: 'Cedrick Joseph H. Mariano',
-    subtitle: 'Project Manager',
+    image: lina,
+    title: 'Neil Aedrian G. Lina',
+    subtitle: 'Production Coordinator',
     social: [
       {
         icon: <FaGithub />,
@@ -56,9 +59,9 @@ export const LunarTeam = [
     gradient: 'linear-gradient(180deg, #10B981, #000)',
   },
   {
-    image: masculino,
-    title: 'Paulo D. Masculino',
-    subtitle: 'Creative Director',
+    image: evangelista,
+    title: 'Patricia Lourdes L. Evangelista',
+    subtitle: 'Logistics Coordinator',
     social: [
       {
         icon: <FaGithub />,
@@ -80,9 +83,9 @@ export const LunarTeam = [
     gradient: 'linear-gradient(165deg, #F59E0B, #000)',
   },
   {
-    image: delapeña,
-    title: 'Harold Prince E. dela Peña',
-    subtitle: 'IT Specialist',
+    image: mendoza,
+    title: 'Margaret Louise S. Mendoza',
+    subtitle: 'Executive Assistant',
     social: [
       {
         icon: <FaGithub />,

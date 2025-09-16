@@ -168,6 +168,51 @@ const Team = () => {
         </AnimatedContent>
       </Box>
 
+      {/* BSA Team */}
+      <Box mb={{ base: 8, md: 8 }} mt={{ base: 0, md: 8 }}>
+        <AnimatedContent
+          distance={100}
+          direction='vertical'
+          reverse={true}
+          duration={0.8}
+          ease='power3.out'
+          animateOpacity
+          scale={1}
+          threshold={0.1}
+        >
+          <Heading
+            fontSize={{ base: '3xl', md: '6xl' }}
+            mb={{ base: 8, md: 12 }}
+            className='bebas-neue-regular'
+            color='white'
+            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+            textAlign='center'
+          >
+            Lunar{' '}
+            <Text
+              as='span'
+              color='white'
+              px={4}
+              py={1}
+              borderRadius='xl'
+              bg='rgba(255, 255, 255, 0.1)'
+              backdropFilter='blur(10px)'
+              border='1px solid rgba(255, 255, 255, 0.3)'
+            >
+              Guardians
+            </Text>
+          </Heading>
+
+          <ChromaGrid
+            items={LunarTeam}
+            radius={300}
+            damping={0.45}
+            fadeOut={0.6}
+            ease='power3.out'
+          />
+        </AnimatedContent>
+      </Box>
+
       {/* BSENTREP Team */}
       <Box mb={{ base: 8, md: 8 }} mt={{ base: 0, md: 8 }}>
         <AnimatedContent
@@ -205,51 +250,6 @@ const Team = () => {
 
           <ChromaGrid
             items={StellarTeam}
-            radius={300}
-            damping={0.45}
-            fadeOut={0.6}
-            ease='power3.out'
-          />
-        </AnimatedContent>
-      </Box>
-
-      {/* BSA Team */}
-      <Box mb={{ base: 8, md: 16 }} mt={{ base: 0, md: 8 }}>
-        <AnimatedContent
-          distance={100}
-          direction='vertical'
-          reverse={true}
-          duration={0.8}
-          ease='power3.out'
-          animateOpacity
-          scale={1}
-          threshold={0.1}
-        >
-          <Heading
-            fontSize={{ base: '3xl', md: '6xl' }}
-            mb={{ base: 8, md: 12 }}
-            className='bebas-neue-regular'
-            color='white'
-            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-            textAlign='center'
-          >
-            Lunar{' '}
-            <Text
-              as='span'
-              color='white'
-              px={4}
-              py={1}
-              borderRadius='xl'
-              bg='rgba(255, 255, 255, 0.1)'
-              backdropFilter='blur(10px)'
-              border='1px solid rgba(255, 255, 255, 0.3)'
-            >
-              Guardians
-            </Text>
-          </Heading>
-
-          <ChromaGrid
-            items={LunarTeam}
             radius={300}
             damping={0.45}
             fadeOut={0.6}

@@ -53,7 +53,7 @@ const Home = () => {
           initialOpacity={0}
         >
           <Box
-            fontSize={{ base: '2xs', md: 'xs' }}
+            fontSize={{ base: '2xs', md: 'sm' }}
             color='white'
             textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
             fontWeight='bold'

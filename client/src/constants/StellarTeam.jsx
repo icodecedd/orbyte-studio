@@ -1,15 +1,16 @@
 import { FaFacebook, FaGithub } from 'react-icons/fa';
 import { IoMail } from 'react-icons/io5';
-import delapeña from '@/assets/dela-peña.webp';
-import florida from '@/assets/florida.webp';
-import mariano from '@/assets/mariano.webp';
-import masculino from '@/assets/masculino.webp';
+import marzo from '@/assets/marzo.webp';
+import deleon from '@/assets/de-leon.webp';
+import cruz from '@/assets/cruz.webp';
+import godes from '@/assets/godes.webp';
+import tanaliga from '@/assets/tanaliga.webp';
 
 export const StellarTeam = [
   {
-    image: florida,
-    title: 'Rj Jack A. Florida',
-    subtitle: 'Chief Executive Officer',
+    image: marzo,
+    title: 'Nicole R. Marzo',
+    subtitle: 'Content Head',
     social: [
       {
         icon: <FaGithub />,
@@ -31,9 +32,9 @@ export const StellarTeam = [
     gradient: 'linear-gradient(145deg, #3B82F6, #000)',
   },
   {
-    image: mariano,
-    title: 'Cedrick Joseph H. Mariano',
-    subtitle: 'Project Manager',
+    image: deleon,
+    title: 'Lhayra Jane C. De Leon',
+    subtitle: 'Executive Assistant',
     social: [
       {
         icon: <FaGithub />,
@@ -55,9 +56,9 @@ export const StellarTeam = [
     gradient: 'linear-gradient(180deg, #10B981, #000)',
   },
   {
-    image: masculino,
-    title: 'Paulo D. Masculino',
-    subtitle: 'Creative Director',
+    image: cruz,
+    title: 'Denise Francesca G. Cruz',
+    subtitle: 'Production Coordinator',
     social: [
       {
         icon: <FaGithub />,
@@ -79,9 +80,9 @@ export const StellarTeam = [
     gradient: 'linear-gradient(165deg, #F59E0B, #000)',
   },
   {
-    image: delapeña,
-    title: 'Harold Prince E. dela Peña',
-    subtitle: 'IT Specialist',
+    image: godes,
+    title: 'Karylle Almira C. Godes',
+    subtitle: 'Marketing Manager',
     social: [
       {
         icon: <FaGithub />,
@@ -101,5 +102,29 @@ export const StellarTeam = [
     ],
     borderColor: '#EF4444',
     gradient: 'linear-gradient(195deg, #EF4444, #000)',
+  },
+  {
+    image: tanaliga,
+    title: 'Pia Lorraine Q. Tanaliga',
+    subtitle: 'Logistics Coordinator',
+    social: [
+      {
+        icon: <FaGithub />,
+        link: 'https://github.com/Harowwld',
+        label: 'Github',
+      },
+      {
+        icon: <IoMail />,
+        link: 'mailto:harolddelapena.11@gmail.com',
+        label: 'Email',
+      },
+      {
+        icon: <FaFacebook />,
+        link: 'https://www.facebook.com/harold.delapena.927',
+        label: 'Facebook',
+      },
+    ],
+    borderColor: '#8B5CF6',
+    gradient: 'linear-gradient(195deg, #8B5CF6, #000)',
   },
 ];
