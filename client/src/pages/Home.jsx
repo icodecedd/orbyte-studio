@@ -34,7 +34,7 @@ const Home = () => {
           beamWidth={2}
           beamHeight={15}
           beamNumber={12}
-          lightColor='#ffffff'
+          lightColor='#a0a0ff'
           speed={2}
           noiseIntensity={1.75}
           scale={0.2}
@@ -119,34 +119,42 @@ const Home = () => {
           textAlign='center'
           px={{ base: 4, md: 0 }}
         >
+          <Text
+            fontSize={{ base: 'xl', md: '3xl' }}
+            color='white'
+            className='bebas-neue-regular'
+          >
+            EXPLORE THE{' '}
+            <span style={{ color: '#a0a0ff' }} className='bebas-neue-regular'>
+              UNEXPECTED
+            </span>
+          </Text>
           <Heading
-            fontSize={{ base: '6xl', md: '180px' }}
+            fontSize={{ base: '6xl', md: '8xl' }}
             mb={4}
             fontWeight='bold'
-            letterSpacing={'3px'}
-            lineHeight={1.2}
+            textAlign={'center'}
+            letterSpacing={'5px'}
+            lineHeight={0.9}
             color='white'
-            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
             className='montserrat-header'
           >
             ORBYTE STUDIO
           </Heading>
-          <Box
-            as='h1'
-            fontSize={{ base: 'md', md: 'lg' }}
+          <Heading
+            fontSize={{ base: 'md', md: 'xl' }}
             mb={8}
             color='white'
             textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
             fontStyle='italic'
-            className='work-sans-regular'
+            className='bebas-neue-regular'
           >
             <ShinyText
               text='We Are Orbyte Studio, Where Your Dreams Are Byte Away From The Future'
               disabled={false}
               speed={3}
-              className='custom-class'
             />
-          </Box>
+          </Heading>
         </Box>
       </FadeContent>
     </Container>
