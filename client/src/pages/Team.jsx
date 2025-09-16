@@ -50,7 +50,7 @@ const Team = () => {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: joinUsRef.current,
-            start: 'top 90%', // Adjusted for mobile viewport
+            start: 'top 100%', // Adjusted for mobile viewport
             end: 'top 50%', // Adjusted for mobile viewport
             scrub: 0.3, // Faster scrub for mobile
             toggleActions: 'play none none reverse',
@@ -259,67 +259,56 @@ const Team = () => {
       </Box>
 
       {/* Join CTA */}
-      <AnimatedContent
-        distance={100}
-        direction='vertical'
-        reverse={false}
-        duration={0.8}
-        ease='power3.out'
-        animateOpacity
-        scale={1}
-        threshold={0.1}
+      <Flex
+        ref={joinUsRef}
+        flexDirection='column'
+        alignItems='center'
+        justifyContent={{ base: 'center', md: 'space-between' }}
+        gap={{ base: 2, md: 4 }}
+        borderRadius='xl'
+        border='1px solid'
+        borderColor='gray.700'
+        p={{ base: 4, md: 8 }}
+        bgClip='padding-box'
+        mb={{ base: 0, md: 8 }}
       >
-        <Flex
-          ref={joinUsRef}
-          flexDirection='column'
-          alignItems='center'
-          justifyContent={{ base: 'center', md: 'space-between' }}
-          gap={{ base: 2, md: 4 }}
-          borderRadius='xl'
-          border='1px solid'
-          borderColor='gray.700'
-          p={{ base: 4, md: 8 }}
-          bgClip='padding-box'
-          mb={{ base: 0, md: 8 }}
+        <Text
+          fontSize={{ base: 'xl', md: '2xl' }}
+          fontWeight='bold'
+          color='white'
+          textAlign={{ base: 'center', md: 'left' }}
+          className='major-mono-display-regular'
         >
-          <Text
-            fontSize={{ base: 'xl', md: '2xl' }}
-            fontWeight='bold'
-            color='white'
-            textAlign={{ base: 'center', md: 'left' }}
-            className='major-mono-display-regular'
-          >
-            join our team
-          </Text>
-          <Text
-            fontSize={{ base: '2xl', md: '6xl' }}
-            color='white'
-            className='bebas-neue-regular'
-            textAlign='center'
-            maxW={{ base: '100%', md: '60%' }}
-            lineHeight={1}
-          >
-            Let's make something extraordinary together.
-          </Text>
-          <Button
-            as={RouterLink}
-            to='/contact'
-            variant='outline'
-            color='white'
-            size='lg'
-            fontWeight='medium'
-            fontSize={{ base: 'xs', md: 'sm' }}
-            borderRadius='lg'
-            borderColor='gray.700'
-            _hover={{
-              bg: 'white',
-              color: 'black',
-            }}
-          >
-            Contact Us
-          </Button>
-        </Flex>
-      </AnimatedContent>
+          join our team
+        </Text>
+        <Text
+          fontSize={{ base: '2xl', md: '6xl' }}
+          color='white'
+          className='bebas-neue-regular'
+          textAlign='center'
+          maxW={{ base: '100%', md: '60%' }}
+          lineHeight={1}
+        >
+          Let's make something extraordinary together.
+        </Text>
+        <Button
+          as={RouterLink}
+          to='/contact'
+          variant='outline'
+          color='white'
+          size='lg'
+          fontWeight='medium'
+          fontSize={{ base: 'xs', md: 'sm' }}
+          borderRadius='lg'
+          borderColor='gray.700'
+          _hover={{
+            bg: 'white',
+            color: 'black',
+          }}
+        >
+          Contact Us
+        </Button>
+      </Flex>
     </Container>
   );
 };

@@ -1,5 +1,5 @@
 import { Box, Heading, Image } from '@chakra-ui/react';
-import orbyteLogo from '@/assets/orbyte-logo.png';
+import orbyteLogo from '@/assets/orbyte-logo.webp';
 
 const Projects = () => {
   return (

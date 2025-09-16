@@ -12,6 +12,7 @@
   "dependencies": {
     "@chakra-ui/react": "^3.26.0",
     "@emotion/react": "^11.14.0",
+    "@gsap/react": "^2.1.2",
     "@react-three/drei": "^10.7.4",
     "@react-three/fiber": "^9.3.0",
     "axios": "^1.11.0",

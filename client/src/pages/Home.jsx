@@ -1,9 +1,18 @@
 import FadeContent from '@/blocks/Animations/FadeContent/FadeContent';
 import Beams from '@/blocks/Backgrounds/Beams/Beams';
 import ShinyText from '@/blocks/TextAnimations/ShinyText/ShinyText';
-import { Box, Container, Flex, IconButton, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  IconButton,
+  Image,
+  Text,
+} from '@chakra-ui/react';
 import { FaFacebook, FaGithub } from 'react-icons/fa';
 import { Link as RouterLink } from 'react-router-dom';
+import orbyteLogo from '@/assets/orbyte-logo.webp';
 
 const Home = () => {
   return (
@@ -52,15 +61,11 @@ const Home = () => {
           easing='ease-out'
           initialOpacity={0}
         >
-          <Box
-            fontSize={{ base: '2xs', md: 'sm' }}
-            color='white'
-            textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-            fontWeight='bold'
-            className='major-mono-display-regular'
-          >
-            &copy; 2025 ORbyte StVdio.
-          </Box>
+          <Image
+            height={{ base: '60px', md: '80px' }}
+            src={orbyteLogo}
+            alt='Orbyte Logo'
+          />
         </FadeContent>
 
         {/* Social Icons */}
@@ -114,16 +119,18 @@ const Home = () => {
           textAlign='center'
           px={{ base: 4, md: 0 }}
         >
-          <Box
-            as='h1'
-            fontSize={{ base: '5xl', md: '7xl' }}
+          <Heading
+            fontSize={{ base: '6xl', md: '180px' }}
             mb={4}
+            fontWeight='bold'
+            letterSpacing={'3px'}
+            lineHeight={1.2}
             color='white'
             textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-            className='major-mono-display-regular'
+            className='montserrat-header'
           >
-            ORbyte StVdio
-          </Box>
+            ORBYTE STUDIO
+          </Heading>
           <Box
             as='h1'
             fontSize={{ base: 'md', md: 'lg' }}
