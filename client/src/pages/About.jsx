@@ -6,6 +6,7 @@ import {
   Flex,
   Box,
   Separator,
+  Highlight,
 } from '@chakra-ui/react';
 import orbit from '@/assets/orbit.webp';
 import star from '@/assets/star.webp';
@@ -40,7 +41,7 @@ const About = () => {
           start: 'top 80%',
           end: 'top 20%',
           scrub: 0.8,
-          toggleActions: 'play none none reverse',
+          toggleActions: 'restart pause reverse pause',
         },
       }
     );
@@ -60,7 +61,7 @@ const About = () => {
           start: 'top 80%',
           end: 'top 20%',
           scrub: 0.8,
-          toggleActions: 'play none none reverse',
+          toggleActions: 'restart pause reverse pause',
         },
       }
     );
@@ -80,7 +81,7 @@ const About = () => {
           start: 'top 80%',
           end: 'top 20%',
           scrub: 0.8,
-          toggleActions: 'play none none reverse',
+          toggleActions: 'restart pause reverse pause',
         },
       }
     );
@@ -145,14 +146,17 @@ const About = () => {
             order={{ base: 1, md: 2 }}
           >
             <Heading
-              fontSize={{ base: '2xl', md: '4xl' }}
+              fontSize='4xl'
               mb={4}
               color='white'
               textAlign={{ base: 'center', md: 'right' }}
               textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-              className='major-mono-display-regular'
+              className='bebas-neue-regular'
             >
-              WHAt We ARe buildinG
+              WHAT ARE WE{' '}
+              <span style={{ color: '#a0a0ff' }} className='bebas-neue-regular'>
+                BUILDING
+              </span>
             </Heading>
             <Text
               fontSize={{ base: 'md', md: 'lg' }}
@@ -160,14 +164,24 @@ const About = () => {
               textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
               className='work-sans-regular'
             >
-              At Orbyte Studio, we're crafting the future of multimedia
-              storytelling. Like celestial bodies that illuminate the cosmos, we
-              create content that captures imagination and transforms ideas into
-              stellar experiences. Our multimedia company specializes in film
-              production, digital design, strategic campaigns, and immersive
-              brand narratives that resonate across galaxies of audiences. We
-              don't just produce content—we architect dreams and engineer
-              inspiration.
+              <Highlight
+                query={['crafting the future of multimedia', 'storytelling']}
+                styles={{
+                  bg: '#a0a0ff', // bright lavender background
+                  color: 'black', // dark text stands out more
+                  px: 1,
+                  borderRadius: 'md',
+                }}
+              >
+                At Orbyte Studio, we're crafting the future of multimedia
+                storytelling. Like celestial bodies that illuminate the cosmos,
+                we create content that captures imagination and transforms ideas
+                into stellar experiences. Our multimedia company specializes in
+                film production, digital design, strategic campaigns, and
+                immersive brand narratives that resonate across galaxies of
+                audiences. We don't just produce content—we architect dreams and
+                engineer inspiration.
+              </Highlight>
             </Text>
           </Box>
         </Flex>
@@ -199,14 +213,17 @@ const About = () => {
             mb={{ base: 4, md: 0 }}
           >
             <Heading
-              fontSize={{ base: '2xl', md: '4xl' }}
+              fontSize='4xl'
               mb={4}
               color='white'
               textAlign={{ base: 'center', md: 'left' }}
               textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-              className='major-mono-display-regular'
+              className='bebas-neue-regular'
             >
-              WHo We ARe
+              WHO WE{' '}
+              <span style={{ color: '#a0a0ff' }} className='bebas-neue-regular'>
+                ARE
+              </span>
             </Heading>
             <Text
               fontSize={{ base: 'md', md: 'lg' }}
@@ -214,14 +231,32 @@ const About = () => {
               textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
               className='work-sans-regular'
             >
-              We are dreamers, creators, and cosmic architects united by a
-              shared passion for multimedia excellence. Our constellation
-              includes visionaries from diverse backgrounds—filmmakers,
-              designers, strategists, and storytellers—all orbiting around the
-              common goal of creating content that moves, inspires, and endures.
-              Like the phases of the moon, we embrace constant evolution, always
-              seeking new ways to illuminate the path forward for our team,
-              clients, and the industry we serve.
+              <Highlight
+                query={[
+                  'dreamers',
+                  'creators',
+                  'cosmic architects',
+                  'filmmakers',
+                  'designers',
+                  'strategists',
+                  'storytellers',
+                ]}
+                styles={{
+                  bg: '#a0a0ff', // bright lavender background
+                  color: 'black', // dark text stands out more
+                  px: 1,
+                  borderRadius: 'md',
+                }}
+              >
+                We are dreamers, creators, and cosmic architects united by a
+                shared passion for multimedia excellence. Our constellation
+                includes visionaries from diverse backgrounds—filmmakers,
+                designers, strategists, and storytellers—all orbiting around the
+                common goal of creating content that moves, inspires, and
+                endures. Like the phases of the moon, we embrace constant
+                evolution, always seeking new ways to illuminate the path
+                forward for our team, clients, and the industry we serve.
+              </Highlight>
             </Text>
           </Box>
           <Box flex='1'>
@@ -238,12 +273,12 @@ const About = () => {
       </AnimatedContent>
 
       <CurvedLoop
-        marqueeText='ORBYTE*MAKE*INNOVATIONS*'
+        marqueeText='✦ORBYTE✦MAKE✦INNOVATIONS✦'
         speed={1.8}
         curveAmount={0}
         direction='right'
         interactive={true}
-        className='orbitron curved-loop'
+        className='anton-sc-regular curved-loop'
       />
 
       <Flex
@@ -298,7 +333,7 @@ const About = () => {
             order={{ base: 1, md: 2 }}
           >
             <Heading
-              fontSize={{ base: '3xl', md: '6xl' }}
+              fontSize={{ base: '5xl', md: '6xl' }}
               mb={{ base: 8, md: 12 }}
               className='bebas-neue-regular'
               color='white'
@@ -308,9 +343,9 @@ const About = () => {
               Our{' '}
               <Text
                 as='span'
-                color='gray.700'
+                color='#a0a0ff'
                 textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
-                bg='white'
+                bg='rgba(50, 50, 100, 0.6)' // deep cosmic navy with transparency
                 px={2}
                 borderRadius='xl'
               >
@@ -325,14 +360,29 @@ const About = () => {
               className='work-sans-regular'
               textAlign='justify'
             >
-              We exist to push the boundaries of creative expression,
-              transforming ordinary concepts into extraordinary multimedia
-              experiences. Our mission is to be the gravitational force that
-              pulls together visionary storytelling, cutting-edge technology,
-              and authentic human connection. Every project we undertake is
-              guided by our commitment to excellence, innovation, and the belief
-              that great stories have the power to shift perspectives and
-              illuminate new possibilities.
+              <Highlight
+                query={[
+                  'push the boundaries of creative expression',
+                  'visionary storytelling',
+                  'cutting-edge technology',
+                  'authentic human connection',
+                ]}
+                styles={{
+                  bg: '#a0a0ff', // bright lavender background
+                  color: 'black', // dark text stands out more
+                  px: 1,
+                  borderRadius: 'md',
+                }}
+              >
+                We exist to push the boundaries of creative expression,
+                transforming ordinary concepts into extraordinary multimedia
+                experiences. Our mission is to be the gravitational force that
+                pulls together visionary storytelling, cutting-edge technology,
+                and authentic human connection. Every project we undertake is
+                guided by our commitment to excellence, innovation, and the
+                belief that great stories have the power to shift perspectives
+                and illuminate new possibilities.
+              </Highlight>
             </Text>
           </Box>
         </Flex>
@@ -354,7 +404,7 @@ const About = () => {
             mb={{ base: 4, md: 0 }}
           >
             <Heading
-              fontSize={{ base: '3xl', md: '6xl' }}
+              fontSize={{ base: '5xl', md: '6xl' }}
               mb={{ base: 8, md: 12 }}
               className='bebas-neue-regular'
               color='white'
@@ -363,8 +413,9 @@ const About = () => {
               Our{' '}
               <Text
                 as='span'
-                color='gray.700'
-                bg='white'
+                color='#a0a0ff'
+                textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+                bg='rgba(50, 50, 100, 0.6)' // deep cosmic navy with transparency
                 px={2}
                 borderRadius='xl'
               >
@@ -379,13 +430,26 @@ const About = () => {
               className='work-sans-regular'
               textAlign='justify'
             >
-              Become the brightest star in the multimedia constellation.
-              recognized globally for our ability to transform creative visions
-              reality. We see a future in which Orbyte Studio serves as
-              Launchpad for developing talent, reliable partner for
-              forward-thinking brands are a beacon of innovation in the ever-
-              The world of digital content development is becoming increasingly
-              diverse.
+              <Highlight
+                query={[
+                  'brightest star in the multimedia constellation',
+                  'Launchpad for developing talent',
+                ]}
+                styles={{
+                  bg: '#a0a0ff', // bright lavender background
+                  color: 'black', // dark text stands out more
+                  px: 1,
+                  borderRadius: 'md',
+                }}
+              >
+                Become the brightest star in the multimedia constellation.
+                recognized globally for our ability to transform creative
+                visions reality. We see a future in which Orbyte Studio serves
+                as Launchpad for developing talent, reliable partner for
+                forward-thinking brands are a beacon of innovation in the ever-
+                The world of digital content development is becoming
+                increasingly diverse.
+              </Highlight>
             </Text>
           </Box>
           <Box

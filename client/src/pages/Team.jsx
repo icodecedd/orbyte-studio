@@ -32,7 +32,7 @@ const Team = () => {
             start: 'top 85%', // Start when the top of the element is 85% from the top of the viewport
             end: 'top 35%', // End when the top of the element is 35% from the top
             scrub: 0.5, // Smooth scrubbing
-            toggleActions: 'play none none reverse',
+            toggleActions: 'restart pause reverse pause',
           },
         }
       );
@@ -53,7 +53,7 @@ const Team = () => {
             start: 'top 100%', // Adjusted for mobile viewport
             end: 'top 50%', // Adjusted for mobile viewport
             scrub: 0.3, // Faster scrub for mobile
-            toggleActions: 'play none none reverse',
+            toggleActions: 'restart pause reverse pause',
           },
         }
       );
@@ -104,9 +104,9 @@ const Team = () => {
             fontWeight='bold'
             color='white'
             textAlign={{ base: 'center', md: 'left' }}
-            className='major-mono-display-regular'
+            className='bebas-neue-regular'
           >
-            Meet tHe teAM
+            MEET THE TEAM
           </Heading>
           <Heading
             fontSize={{ base: '2xl', md: '6xl' }}
@@ -146,13 +146,12 @@ const Team = () => {
             Celestial{' '}
             <Text
               as='span'
-              color='white'
-              px={4}
+              color='#a0a0ff'
+              textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+              bg='rgba(50, 50, 100, 0.6)' // deep cosmic navy with transparency
+              px={2}
               py={1}
               borderRadius='xl'
-              bg='rgba(255, 255, 255, 0.1)'
-              backdropFilter='blur(10px)'
-              border='1px solid rgba(255, 255, 255, 0.3)'
             >
               Innovators
             </Text>
@@ -191,13 +190,12 @@ const Team = () => {
             Lunar{' '}
             <Text
               as='span'
-              color='white'
-              px={4}
+              color='#a0a0ff'
+              textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+              bg='rgba(50, 50, 100, 0.6)' // deep cosmic navy with transparency
+              px={2}
               py={1}
               borderRadius='xl'
-              bg='rgba(255, 255, 255, 0.1)'
-              backdropFilter='blur(10px)'
-              border='1px solid rgba(255, 255, 255, 0.3)'
             >
               Guardians
             </Text>
@@ -236,13 +234,12 @@ const Team = () => {
             Stellar{' '}
             <Text
               as='span'
-              color='white'
-              px={4}
+              color='#a0a0ff'
+              textShadow='0px 2px 4px rgba(0, 0, 0, 0.5)'
+              bg='rgba(50, 50, 100, 0.6)' // deep cosmic navy with transparency
+              px={2}
               py={1}
               borderRadius='xl'
-              bg='rgba(255, 255, 255, 0.1)'
-              backdropFilter='blur(10px)'
-              border='1px solid rgba(255, 255, 255, 0.3)'
             >
               Navigators
             </Text>
